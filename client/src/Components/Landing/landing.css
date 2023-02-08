@@ -1,0 +1,12 @@
+.landing{
+    text-align: center;
+    background-image: url("https://stonkstutors.com/wp-content/uploads/2022/01/Juegos-en-tu-Smart-TV.jpg");
+  }
+
+.btn{ 
+    background-image: url("https://stonkstutors.com/wp-content/uploads/2022/01/Juegos-en-tu-Smart-TV.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100vw;
+}
