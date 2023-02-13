@@ -13,7 +13,7 @@ router.get('/', async(req,res) => {
     if(!nombre){
         try {
             const gamesApi = [];
-            const info = await axios.get(`https://api.rawg.io/api/games?key=${API_KEY}`)
+            const info = await axios.get(`https://api.rawg.io/api/games?key=${API_KEY}&page_size=15`)
 
             info.data.results.map(game => {
                 gamesApi.push({
@@ -45,7 +45,7 @@ router.get('/', async(req,res) => {
              }
             }});
 
-        const info = await axios.get(`https://api.rawg.io/api/games?key=${API_KEY}&search=${nombre}`);
+        const info = await axios.get(`https://api.rawg.io/api/games?key=${API_KEY}&search=${nombre}&page_size=15`);
 
         info.data.results.map(game=>{
             apiGames.push({
@@ -87,7 +87,6 @@ router.get('/:id', async(req,res) => {
                 rating: info.data.rating,
                 plataformas: info.data.platforms.map(platform => { return platform.platform.name }),
             }};
-            console.log(game());
           return res.send(game());
         }
           if(!Number.isInteger(id)){

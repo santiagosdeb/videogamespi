@@ -7,7 +7,7 @@ const Container = ({videogames}) => {
     <div className={style.container}>
         {videogames.map((game) => {
             return (
-                <Game key={game.id} imagen={game.imagen} nombre={game.nombre} generos={game.generos}/>
+                <Game key={game.id} id={game.id} imagen={game.imagen} nombre={game.nombre} generos={game.generos}/>
             )
         })}
     </div>

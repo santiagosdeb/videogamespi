@@ -3,7 +3,6 @@
     flex-direction: row;
     flex-wrap: wrap;
     background-color: rgba(171, 159, 159, 0.343);
-    border-radius: 15px;
     align-items: center;
     justify-content: center;
   }

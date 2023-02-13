@@ -5,6 +5,7 @@ export const GET_VIDEOGAMES_DETAIL = "GET_VIDEOGAMES_DETAIL"
 export const CLEAN_GAME_DETAIL = "CLEAN_GAME_DETAIL" 
 export const SEARCH_VIDEOGAMES = "SEARCH_VIDEOGAMES"
 export const GET_GENEROS = "GET_GENEROS"
+export const CLEAN_VIDEOGAMES = "CLEAN_VIDEOGAMES"
 
 export const getVideogames = () => {
     return async function (dispatch) {
@@ -17,8 +18,12 @@ export const getVideogames = () => {
     }
 };
 
+export const cleanAllVideogames = () => {
+    return{type: CLEAN_VIDEOGAMES}
+}
+
 export const getVideogamesDetail = (id) => {
-    return async function (dispatch) {
+    return async function(dispatch) {
         const info = await axios.get(`http://localhost:3001/videogames/${id}`)
         const gameDetail = info.data;
         dispatch({

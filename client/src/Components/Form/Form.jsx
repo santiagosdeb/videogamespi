@@ -7,7 +7,9 @@ const Form = () => {
         nombre: "",
         descripcion: "",
         fechaDeLanzamiento: "",
-        rating: ""
+        rating: "",
+        generos: [],
+        plataformas: []
         });
 
     const [errors, setErrors] = useState({});

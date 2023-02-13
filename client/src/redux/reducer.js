@@ -1,9 +1,9 @@
-import { GET_GENEROS, GET_VIDEOGAMES, GET_VIDEOGAMES_DETAIL, SEARCH_VIDEOGAMES } from "./actions";
+import { CLEAN_GAME_DETAIL, CLEAN_VIDEOGAMES, GET_GENEROS, GET_VIDEOGAMES, GET_VIDEOGAMES_DETAIL, SEARCH_VIDEOGAMES } from "./actions";
 
 const initialState = {
     videogames: [],
     videogamesSearched: [],
-    videogameDetail: [],
+    videogameDetail: {},
     generos: []
 };
 
@@ -14,6 +14,11 @@ export default function reducer (state=initialState, action) {
                 ...state,
                 videogames: action.payload, 
             }
+        case CLEAN_VIDEOGAMES:
+            return{
+                ...state,
+                videogames: []
+            }
         case SEARCH_VIDEOGAMES:
             return {
                 ...state,
@@ -23,6 +28,11 @@ export default function reducer (state=initialState, action) {
             return {
                 ...state,
                 videogameDetail: action.payload
+            }
+        case CLEAN_GAME_DETAIL:
+            return{
+                ...state,
+                videogameDetail: {}
             }
         case GET_GENEROS:
             return{
