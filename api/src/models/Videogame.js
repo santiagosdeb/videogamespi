@@ -9,15 +9,12 @@ module.exports = (sequelize) => {
       primaryKey: true,
       defaultValue: DataTypes.UUIDV4,
     },
-    imagen: {
-      type: DataTypes.TEXT,
-    },
     nombre: {
       type: DataTypes.STRING,
       allowNull: false,
     },
     descripcion: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,
       allowNull: false,
     },
     fechaDeLanzamiento: {
@@ -29,8 +26,10 @@ module.exports = (sequelize) => {
     plataformas: {
       type: DataTypes.ARRAY(DataTypes.STRING),
       allowNull: false,
-      defaultValue: [],
-    }
+    },
+    imagen: {
+      type: DataTypes.TEXT,
+    },
   },
   {
     timestamps: false

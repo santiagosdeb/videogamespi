@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { searchVideogames } from "../../redux/actions";
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+import style from './buscador.module.css'
 
-const Buscador = (props) => {
+const Buscador = () => {
 
   const dispatch = useDispatch();
   const searchedGames = useSelector(state=>state.videogamesSearched)
@@ -21,23 +22,26 @@ const Buscador = (props) => {
 
     return (
       <div>
-        <h2>Buscador</h2>
-        <form className="form-container" onSubmit={handleSubmit}>
+        <form className={style.formcontainer} onSubmit={handleSubmit}>
           <div>
-            <label className="label" htmlFor="game">Videogame: </label>
-            <input type="text" id="game" value={game} onChange={handleChange}/>
+            <input type="text" id="game" value={game} onChange={handleChange} autoComplete="off" placeholder="Search videogame" className={style.buscador}/>
           </div>
-         <button type="submit">BUSCAR</button>
+         <button type="submit">SEARCH</button>
         </form>
-        <ul>
+        <ul className={style.container}>
           {searchedGames.map((game) => {
             return(
-              <li>
-                <Link>
-                  <span>{game.nombre}</span>
-                </Link>
-                <button>Ver Detalle</button>
-              </li>
+              <div className={style.game}>
+                <div className={style.containerb}>
+                  <li>
+                    <Link to={`/game/${game.id}`}>
+                      <img src={game.imagen} alt={'./noImage.jpg'} className={style.imgBuscados}/>
+                      <h3>{game.nombre}</h3>
+                      <button>Ver Detalle</button>
+                    </Link>
+                  </li>
+                </div>
+              </div>
             )
           })}
         </ul>
@@ -49,5 +53,10 @@ const Buscador = (props) => {
 
  
 
-  // <h5>{game}</h5>
-  //       <input type="text" onChange={changeHandler}></input>
+//   var image = new Image();
+// image.src = "image1.jpg";
+// image.onerror = function() {
+//     this.src = "image2.jpg";
+// };
+// document.body.appendChild(image);
+// segunda imagen??

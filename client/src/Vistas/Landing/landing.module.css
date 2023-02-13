@@ -1,0 +1,27 @@
+.landing{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  width: auto;
+  height: auto;
+  background-image: url('fondo.jpg');
+  resize: both;
+  overflow: auto;
+  background-repeat: round;
+}
+
+.btn{ 
+  border-radius: 10px;
+  background-color: rgba(213, 156, 50, 0.871);
+  width: 150px;
+  height: 50px;
+  color: black;
+  cursor: pointer;
+  font-size: 18px; 
+  position: fixed;
+  top: 50%;
+  bottom: 50%;
+  transform: translate(-50%, -50%);
+  }

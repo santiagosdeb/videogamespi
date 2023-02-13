@@ -17,11 +17,14 @@ router.get('/', async(req,res) => {
 
             info.data.results.map(game => {
                 gamesApi.push({
+                    id: game.id,
                     imagen: game.background_image,
                     nombre: game.name,
-                    generos: game.genres.map(genero => {
-                        return genero.name;
-                    }),
+                    generos: game.genres.map(genero => { return genero.name }),
+                    descripcion: game.description_raw,
+                    fechaDeLanzamiento: game.released,
+                    rating: game.rating,
+                    plataformas: game.platforms.map(platform => { return platform.platform.name })
                 })
             });
             const gamesDB = await Videogame.findAll();
@@ -46,11 +49,14 @@ router.get('/', async(req,res) => {
 
         info.data.results.map(game=>{
             apiGames.push({
+                id: game.id,
                 imagen: game.background_image,
                 nombre: game.name,
-                generos: game.genres.map(gen => {
-                    return gen.name;
-                })
+                géneros: game.genres.map(genero => { return genero.name }),
+                descripción: game.description_raw,
+                fechaDeLanzamiento: game.released,
+                rating: game.rating,
+                plataformas: game.platforms.map(platform => { return platform.platform.name })
             })
         });
         const response = [...apiGames,...gameDatabase];
@@ -68,19 +74,21 @@ router.get('/:id', async(req,res) => {
     const {id} = req.params;
     try {
         if(Number(id)) {
-            const game = [];
             const info = await axios.get(`https://api.rawg.io/api/games/${id}?key=${API_KEY}`)
         
-            game.push({
+            const game = () => {
+                return{
+                id:info.data.id,
                 imagen: info.data.background_image,
                 nombre: info.data.name,
-                géneros: info.data.genres.map(genero => { return genero.name }),
-                descripción: info.data.description_raw,
+                generos: info.data.genres.map(genero => { return genero.name }),
+                descripcion: info.data.description_raw,
                 fechaDeLanzamiento: info.data.released,
                 rating: info.data.rating,
                 plataformas: info.data.platforms.map(platform => { return platform.platform.name }),
-            });
-          return res.send(game);
+            }};
+            console.log(game());
+          return res.send(game());
         }
           if(!Number.isInteger(id)){
                 const gameDatabase = await Videogame.findByPk(id);

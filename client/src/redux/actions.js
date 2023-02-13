@@ -4,7 +4,7 @@ export const GET_VIDEOGAMES = "GET_VIDEOGAMES";
 export const GET_VIDEOGAMES_DETAIL = "GET_VIDEOGAMES_DETAIL" 
 export const CLEAN_GAME_DETAIL = "CLEAN_GAME_DETAIL" 
 export const SEARCH_VIDEOGAMES = "SEARCH_VIDEOGAMES"
-
+export const GET_GENEROS = "GET_GENEROS"
 
 export const getVideogames = () => {
     return async function (dispatch) {
@@ -41,5 +41,18 @@ export const searchVideogames = (game) => {
             payload: games
         })
     }
-}
+};
+
+export const getGeneros = () => {
+    return async function (dispatch) {
+        const info = await axios.get('http://localhost:3001/generos')
+        const generos = info.data;
+        dispatch({
+            type: GET_GENEROS,
+            payload: generos
+        })
+    }
+};
+
+
 

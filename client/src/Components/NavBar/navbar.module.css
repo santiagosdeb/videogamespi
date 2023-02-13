@@ -1,0 +1,23 @@
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    background-color: rgba(171, 159, 159, 0.343);
+  }
+
+  .btn{
+    width: 260px;
+    height: 40px;
+    background: #fefdfa;
+    border: 1px solid #87847f;
+    cursor: pointer;
+    border-radius: 2px;
+    color: rgb(0, 0, 0);
+    font-family: "Exo", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    text-align: center;
+    padding: 6px;
+    margin: 30px;
+    border-radius: 5px;
+  }
