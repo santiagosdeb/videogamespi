@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useDispatch, useSelector } from 'react-redux'
-import { getGeneros } from '../../redux/actions';
+import { getGeneros } from '../../redux/actions'
 import style from './form.module.css'
 
 const Form = () => {
@@ -22,7 +22,7 @@ const Form = () => {
     useEffect(()=>{
         setErrors(formValidator(form))
         dispatch(getGeneros())
-    },[dispatch])   
+    },[dispatch,form])   
 
     const [errors, setErrors] = useState({});
 
@@ -80,34 +80,34 @@ const Form = () => {
      return(
         <div className={style.container}>
         <div className={style.prueba}>
+        <form onSubmit={submitHandler} className={style.form}>
         <h2>POST A VIDEOGAME</h2>
-        <form onSubmit={submitHandler}>
             <div>
-                <label htmlFor="nombre">Nombre</label>
-                <input type="text" onChange={changeHandler} name="nombre" value={form.nombre}/>
+                <label htmlFor="nombre" className={style.label} required>Nombre</label>
+                <input type="text" onChange={changeHandler} name="nombre" value={form.nombre} className={style.input}/>
                 <p>{errors.nombre && errors.nombre}</p>
             </div>
             
             <div>
-                <label htmlFor="descripcion">Descripción</label>
-                <input type="text" onChange={changeHandler} name="descripcion" value={form.descripcion}/>
+                <label htmlFor="descripcion" className={style.label} required>Descripción</label>
+                <input type="text" onChange={changeHandler} name="descripcion" value={form.descripcion} className={style.input}/>
                 <p>{errors.descripcion && errors.descripcion}</p>
             </div>
 
             <div>
-                <label htmlFor="fechaDeLanzamiento">Fecha de lanzamiento</label>
-                <input type="date" onChange={changeHandler} name="fechaDeLanzamiento" value={form.fechaDeLanzamiento}/>
+                <label htmlFor="fechaDeLanzamiento" className={style.label}>Fecha de lanzamiento</label>
+                <input type="date" onChange={changeHandler} name="fechaDeLanzamiento" value={form.fechaDeLanzamiento} className={style.input}/>
                 <p>{errors.fechaDeLanzamiento && errors.fechaDeLanzamiento}</p>
             </div>
 
             <div>
-                <label htmlFor="rating">Rating</label>
-                <input type="number" onChange={changeHandler} name="rating" value={form.rating} placeholder="Min: 0 Max:5"/>
+                <label htmlFor="rating" className={style.label}>Rating</label>
+                <input type="number" onChange={changeHandler} name="rating" value={form.rating} placeholder="Min: 0 Max:5" className={style.input}/>
                 <p>{errors.rating && errors.rating}</p>
             </div>
 
             <div>
-            <label htmlFor="generos">Generos</label>
+            <label htmlFor="generos" className={style.label}>Generos</label>
                 <select name="generos" defaultValue={[]} onChange={changeHandlerArr} multiple>
                     <option disabled value="default">Presionando ctrl, seleccione uno o más generos</option>
                     {
@@ -117,7 +117,7 @@ const Form = () => {
             </div>
 
             <div>
-            <label htmlFor="plataformas">Plataformas</label>
+            <label htmlFor="plataformas" className={style.label} required>Plataformas</label>
                 <select name="plataformas" defaultValue={[]} onChange={changeHandlerArr} multiple>
                     <option disabled value="default">Presionando ctrl, seleccione una o más plataformas</option>
                     {

@@ -1,0 +1,47 @@
+.container {
+    display: fixed;
+    justify-content: center;
+    align-items: center;
+  }
+  
+.second {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url('fondod.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+
+.gameImg {
+  display:inline-block;
+  margin-top: 10px;
+  width: 500px;
+  height: 300px;
+  border-radius: 17px;
+}
+
+.fuente {
+  color: rgb(140, 247, 178);
+}
+.size{
+  font-weight: bold;
+  font-size: medium
+}
+
+.lista {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.lista li {
+  flex: 1;
+  text-align: center;
+  font-size: medium;
+  font-weight: bold;
+}

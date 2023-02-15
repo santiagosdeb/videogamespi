@@ -4,7 +4,6 @@ import { cleanAllVideogames, getVideogames, orderVideogames } from '../../redux/
 import GameContainer from '../../Components/GameContainer/GameContainer'
 import Buscador from '../../Components/Buscador/Buscador';
 import Paginado from '../../Components/Paginado/Paginado';
-import style from './home.module.css'
 
 const Home = () => {
     const dispatch = useDispatch();
@@ -36,7 +35,7 @@ const Home = () => {
     },[dispatch]);
 
     
-
+if(currentGames.length){
    return(
             <>
             <Paginado 
@@ -48,21 +47,25 @@ const Home = () => {
             <Buscador />
             <div>
                 <button value="ratingAsc" onClick={handleOrder}>
-                    Ordenar por rating (ascendente)
+                    Ordenar por rating (from 0 to 5)
                 </button>
                 <button value="ratingDesc" onClick={handleOrder}>
-                    Ordenar por rating (descendente)
+                    Ordenar por rating (from 5 to 0)
                 </button>
                 <button value="nombreAsc" onClick={handleOrder}>
-                    Ordenar por nombre (ascendente)
+                    Ordenar por nombre (A-Z)
                 </button>
                 <button value="nombreDesc" onClick={handleOrder}>
-                    Ordenar por nombre (descendente)
+                    Ordenar por nombre (Z-A)
                 </button>
             </div>
             <GameContainer key={videogames.id} currentGames={currentGames} />
             </>
-        )
+        )}else{
+            return(
+                <h1>LOADING...</h1>
+            )
+        }
 };
 
 export default Home;

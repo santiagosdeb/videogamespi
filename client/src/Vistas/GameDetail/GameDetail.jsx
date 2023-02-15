@@ -2,7 +2,7 @@ import React, {useEffect} from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { cleanGameDetail, getVideogamesDetail } from '../../redux/actions';
-
+import style from './gameDetail.module.css'
 
 const GameDetail = () => {
 
@@ -24,28 +24,30 @@ const GameDetail = () => {
 
   if(generos !== undefined || plataformas !== undefined){
     return (
-    <div>
-      <h1>{gameDetail.nombre}</h1>
-      <img src={gameDetail.imagen} alt="imagen detail"/>
-      <h3>Genero/s:</h3>
-      <ul>
-        {generos?.map(gen=>{ 
-          return(
-          <li key={gen}>{gen}</li>
-        )})}
-      </ul>
-      <p>{gameDetail.descripcion}</p>
-      <h4>Fecha de Lanzamiento: {gameDetail.fechaDeLanzamiento}</h4>
-      <h4>Rating: {gameDetail.rating}</h4>
-      <ul>
-      {plataformas?.map(plat=>{
-          return(
-            <li key={plat}>{plat}</li>
-          )
-        })}
-      </ul>
-      
-    </div>
+      <div className={style.container}>
+        <div className={style.second}>
+          <h1 className={style.fuente}>{gameDetail.nombre}</h1>
+          <img src={gameDetail.imagen} alt="imagen detail" className={style.gameImg}/>
+          <h3 className={style.fuente}>Generos</h3>
+          <ul className={style.lista}>
+            {generos?.map(gen=>{ 
+              return(
+              <li key={gen} className={`${style.fuente} && ${style.size}`}>{gen}</li>
+            )})}
+          </ul>
+          <p className={`${style.fuente} && ${style.size}`}>{gameDetail.descripcion}</p>
+          <h4 className={`${style.fuente} && ${style.size}`}>Fecha de Lanzamiento: {gameDetail.fechaDeLanzamiento}</h4>
+          <h4 className={`${style.fuente} && ${style.size}`}>Rating: {gameDetail.rating}</h4>
+          <h3 className={style.fuente}>Plataformas</h3>
+          <ul className={style.lista}>
+          {plataformas?.map(plat=>{
+              return(
+                <li key={plat} className={`${style.fuente} && ${style.size}`}>{plat}</li>
+              )
+            })}
+          </ul>
+        </div>
+      </div>
   )} else{
     return(
       <h1>Loading...</h1>

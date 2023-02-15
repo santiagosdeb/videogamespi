@@ -1,10 +1,56 @@
 .container {
+  display: fixed;
+  justify-content: center;
+  align-items: center;
+}
+
+.prueba {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  width: max-content;
-  height: max-content;
-  background-image: url('./fondof.jpg');
-  background-size:fill;
+  flex-direction: column;
+  align-items: center;
+  background-image: url('fondof.jpg');
   background-repeat: no-repeat;
+  background-size: cover;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(140, 247, 178, 0.765);
+}
+
+.label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+
+select[multiple] {
+  height: 120px;
+}
+
+button:disabled{
+  background-color: lightgray;
 }

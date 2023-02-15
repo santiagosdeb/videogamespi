@@ -9,21 +9,16 @@ const Game = ({ nombre, imagen, generos, id }) => {
       <>
         <div  className={style.game}>
           <div  className={style.container}>
-            <div className={style.links}>
+            <div>
               <Link to={`/game/${id}`}>
                 <img src={imagen} alt="Fotos" className={style.gameImg} />
                 <h2 className={style.nombres}> {nombre} </h2>
               </Link>
-            </div>
-  
-            <div className={style.itemsGenros}>
-                <h3>Generos</h3>
-                <ul>
+              <ul className={style.lista}>
                   {
                     generos.map((genero,index)=> {return(<li key={index}>{genero}</li>)})
                   }
                 </ul>
-                
             </div>
           </div>
         </div>
