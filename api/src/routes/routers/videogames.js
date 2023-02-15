@@ -38,7 +38,7 @@ router.get('/', async(req,res) => {
             res.send(listado);
         } catch (error) {
             res.send(error.message);   
-        }
+        } 
       }
     if(nombre){
         try {
@@ -117,7 +117,7 @@ router.post('/', async(req,res) => {
             try {
                 generos.map(async(genero)=>{
                     const gen = await Genero.findByPk(genero)
-                    newGame.addGenero(gen)
+                    newGame.setGeneros(gen)
                 })
                 return res.send("Creado con éxito")
             } catch (error) {

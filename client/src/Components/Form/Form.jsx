@@ -58,7 +58,7 @@ const Form = () => {
         event.preventDefault()
         if(!Object.keys(errors).length){
             try {
-                const post = await axios.post('http://localhost:3001/videogames',form)
+                const post = await axios.post('http://localhost:3001/videogames',{form})
                 console.log(post.data)
                 alert(post.data)
                 setForm({
