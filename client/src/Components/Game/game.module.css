@@ -12,14 +12,20 @@
     color: black;
     width: 270px;
     height: 420px;
+    background-color: rgba(140, 247, 178, 0.765);
+    transition: transform 0.2s ease-in-out;
   }
   
+  .container:hover{
+    transform: scale(1.1)
+  }
+
   .gameImg {
     height: 250px;
     width: 100%;
     object-fit: cover;
   }
-  
+
   .nombres {
     color: black;
     padding: 0 20px 20px;

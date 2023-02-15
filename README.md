@@ -109,13 +109,13 @@ Se debe desarrollar una aplicación de React/Redux que contenga las siguientes p
 
 __Pagina inicial__: deben armar una landing page con
 
-- [ ] Alguna imagen de fondo representativa al proyecto
-- [ ] Botón para ingresar al home (`Ruta principal`)
+- [x] Alguna imagen de fondo representativa al proyecto
+- [x] Botón para ingresar al home (`Ruta principal`)
 
 __Ruta principal__: debe contener
 
-- [ ] Input de búsqueda para encontrar videojuegos por nombre
-- [ ] Área donde se verá el listado de videojuegos. Deberá mostrar su:
+- [x] Input de búsqueda para encontrar videojuegos por nombre
+- [x] Área donde se verá el listado de videojuegos. Deberá mostrar su:
   - Imagen
   - Nombre
   - Géneros
@@ -127,22 +127,22 @@ __IMPORTANTE__: Dentro de la Ruta Principal se deben mostrar tanto los videjuego
 
 __Ruta de detalle de videojuego__: debe contener
 
-- [ ] Los campos mostrados en la ruta principal para cada videojuegos (imagen, nombre, y géneros)
-- [ ] Descripción
-- [ ] Fecha de lanzamiento
-- [ ] Rating
-- [ ] Plataformas
+- [x] Los campos mostrados en la ruta principal para cada videojuegos (imagen, nombre, y géneros)
+- [x] Descripción
+- [x] Fecha de lanzamiento
+- [x] Rating
+- [x] Plataformas
 
 __Ruta de creación de videojuegos__: debe contener
 
-- [ ] Un formulario __controlado con JavaScript__ con los siguientes campos:
+- [x] Un formulario __controlado con JavaScript__ con los siguientes campos:
   - Nombre
   - Descripción
   - Fecha de lanzamiento
   - Rating
-- [ ] Posibilidad de seleccionar/agregar varios géneros
-- [ ] Posibilidad de seleccionar/agregar varias plataformas
-- [ ] Botón/Opción para crear un nuevo videojuego
+- [x] Posibilidad de seleccionar/agregar varios géneros
+- [x] Posibilidad de seleccionar/agregar varias plataformas
+- [x] Botón/Opción para crear un nuevo videojuego
 
 > Es requisito que el formulario de creación esté validado con JavaScript y no sólo con validaciones HTML. Pueden agregar las validaciones que consideren. Por ejemplo: Que el nombre del juego no pueda contener algunos símbolos, que el rating no pueda exceder determinado valor, etc.
 
@@ -193,5 +193,6 @@ __IMPORTANTE__: No está permitido utilizar los filtrados, ordenamientos y pagin
 - [ ] Al menos tener un componente del frontend con sus tests respectivos
 - [ ] Al menos tener una ruta del backend con sus tests respectivos
 - [ ] Al menos tener un modelo de la base de datos con sus tests respectivos
-#   v i d e o g a m e s p i  
+#   v i d e o g a m e s p i 
+ 
  

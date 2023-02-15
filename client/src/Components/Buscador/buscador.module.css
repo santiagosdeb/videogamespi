@@ -22,8 +22,8 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    background-color: rgba(171, 159, 159, 0.343);
-    border-radius: 15px;
+    background-image: url('./fondof.jpg');
+    background-size: cover;
     align-items: center;
     justify-content: center;
   }
@@ -34,6 +34,12 @@
     color: black;
     width: 270px;
     height: 420px;
+    background-color: rgba(140, 247, 178, 0.765);
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .containerb:hover{
+    transform: scale(1.1)
   }
 
   .game {

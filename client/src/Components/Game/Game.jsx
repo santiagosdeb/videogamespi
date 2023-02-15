@@ -19,8 +19,9 @@ const Game = ({ nombre, imagen, generos, id }) => {
             <div className={style.itemsGenros}>
                 <h3>Generos</h3>
                 <ul>
-                  
-                    {/* <li>{generos[0]}</li> */}
+                  {
+                    generos.map((genero,index)=> {return(<li key={index}>{genero}</li>)})
+                  }
                 </ul>
                 
             </div>

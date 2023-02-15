@@ -13,9 +13,14 @@ router.get('/', async(req,res) => {
     if(!nombre){
         try {
             const gamesApi = [];
-            const info = await axios.get(`https://api.rawg.io/api/games?key=${API_KEY}&page_size=15`)
+            const info = await axios.get(`https://api.rawg.io/api/games?key=${API_KEY}&page_size=40`)
+            const info2 = await axios.get(info.data.next)
+            const info3 = await axios.get(info2.data.next)
 
-            info.data.results.map(game => {
+            const promise = await Promise.all([info, info2, info3])
+            const [infoData, info2Data, info3Data] = promise.map(val => val.data);
+            const allData = [...infoData.results,...info2Data.results,...info3Data.results]
+            allData.map(game => {
                 gamesApi.push({
                     id: game.id,
                     imagen: game.background_image,
@@ -107,7 +112,7 @@ router.post('/', async(req,res) => {
         if(!nombre || !descripcion || !plataformas) { 
             return res.status(400).send("Faltan datos obligatorios")
         };
-        const newGame = await Videogame.create(req.body);
+        const newGame = await Videogame.create({nombre, descripcion, fechaDeLanzamiento, rating, plataformas, generos});
         if(generos.length > 0) {
             try {
                 generos.map(async(genero)=>{

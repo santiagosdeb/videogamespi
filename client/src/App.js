@@ -5,6 +5,7 @@ import NavBar from './Components/NavBar/NavBar.jsx';
 import Landing from './Vistas/Landing/Landing';
 import GameDetail from './Vistas/GameDetail/GameDetail';
 import { Route } from 'react-router-dom' 
+import VistaBuscador from './Components/Buscador/vistaBuscador';
 
 
 function App() {
@@ -22,6 +23,9 @@ function App() {
       </Route>
       <Route path='/game/:id'>
         <GameDetail/>
+      </Route>
+      <Route path='/search/:game'>
+        <VistaBuscador/>
       </Route>
     </div>
   )

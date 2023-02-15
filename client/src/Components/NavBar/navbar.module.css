@@ -2,7 +2,11 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    background-color: rgba(171, 159, 159, 0.343);
+    height: 140px;
+    background-image: url('./fondoNavbar.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 0px;
   }
 
   .btn{
