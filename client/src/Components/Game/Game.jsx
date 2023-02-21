@@ -14,11 +14,11 @@ const Game = ({ nombre, imagen, generos, id }) => {
                 <img src={imagen} alt="Fotos" className={style.gameImg} />
                 <h2 className={style.nombres}> {nombre} </h2>
               </Link>
-              <ul className={style.lista}>
+              {/* <ul className={style.lista}>
                   {
-                    generos.map((genero,index)=> {return(<li key={index}>{genero}</li>)})
+                    generos.map((genero)=> {return(<li key={genero.id}>{genero.nombre}</li>)})
                   }
-                </ul>
+                </ul> */}
             </div>
           </div>
         </div>

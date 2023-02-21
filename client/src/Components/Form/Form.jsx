@@ -15,7 +15,7 @@ const Form = () => {
         imagen: './noImage.jpg',
         fechaDeLanzamiento: "",
         rating: "",
-        generos: [],
+        genres: [],
         plataformas: []
         });
 
@@ -36,6 +36,7 @@ const Form = () => {
         if(!form.descripcion.length) errors.descripcion = "Debe ingresar una descripcion"
         if(form.rating > 5) errors.rating = "El rating no puede superar los 5 puntos";
         if(form.rating < 0) errors.rating = "El rating no puede ser menor a 0 puntos";
+        if(!form.genres.length) errors.genres = "Debe seleccionar al menos un genero"
         if(!form.plataformas.length) errors.plataformas = "Debe seleccionar al menos una plataforma"
         return errors;
     };
@@ -58,7 +59,7 @@ const Form = () => {
         event.preventDefault()
         if(!Object.keys(errors).length){
             try {
-                const post = await axios.post('http://localhost:3001/videogames',{form})
+                const post = await axios.post('http://localhost:3001/videogames',form)
                 console.log(post.data)
                 alert(post.data)
                 setForm({
@@ -66,7 +67,7 @@ const Form = () => {
                     descripcion: "",
                     fechaDeLanzamiento: "",
                     rating: "",
-                    generos: [],
+                    genres: [],
                     plataformas: []
                 })
             } catch (error) {
@@ -87,7 +88,7 @@ const Form = () => {
                 <input type="text" onChange={changeHandler} name="nombre" value={form.nombre} className={style.input}/>
                 <p>{errors.nombre && errors.nombre}</p>
             </div>
-            
+
             <div>
                 <label htmlFor="descripcion" className={style.label} required>Descripción</label>
                 <input type="text" onChange={changeHandler} name="descripcion" value={form.descripcion} className={style.input}/>
@@ -107,18 +108,19 @@ const Form = () => {
             </div>
 
             <div>
-            <label htmlFor="generos" className={style.label}>Generos</label>
-                <select name="generos" defaultValue={[]} onChange={changeHandlerArr} multiple>
+            <label htmlFor="genres" className={style.label}>Generos</label>
+                <select name="genres" value={form.genres} onChange={changeHandlerArr} multiple>
                     <option disabled value="default">Presionando ctrl, seleccione uno o más generos</option>
                     {
                     generos?.map(gen=>{return(<option key={gen.id} value={gen.nombre}>{gen.nombre}</option>)})
                     }
                 </select>
+                <p>{errors.genres && errors.genres}</p>
             </div>
 
             <div>
             <label htmlFor="plataformas" className={style.label} required>Plataformas</label>
-                <select name="plataformas" defaultValue={[]} onChange={changeHandlerArr} multiple>
+                <select name="plataformas" value={form.plataformas} onChange={changeHandlerArr} multiple>
                     <option disabled value="default">Presionando ctrl, seleccione una o más plataformas</option>
                     {
                     plataformas?.map((plat,index)=>{return(<option key={index} value={plat}>{plat}</option>)})

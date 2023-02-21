@@ -33,7 +33,7 @@ router.get('/', async(req,res) => {
                 })
             });
             const gamesDB = await Videogame.findAll();
-            const listado = [...gamesApi,...gamesDB]
+            const listado = [...gamesDB, ...gamesApi]
 
             res.send(listado);
         } catch (error) {
@@ -57,7 +57,7 @@ router.get('/', async(req,res) => {
                 id: game.id,
                 imagen: game.background_image,
                 nombre: game.name,
-                géneros: game.genres.map(genero => { return genero.name }),
+                generos: game.genres.map(genero => { return genero.name }),
                 descripción: game.description_raw,
                 fechaDeLanzamiento: game.released,
                 rating: game.rating,
@@ -106,20 +106,20 @@ router.get('/:id', async(req,res) => {
 });
 
 router.post('/', async(req,res) => {
-    const {nombre, descripcion, fechaDeLanzamiento, rating, plataformas, generos} = req.body;
+    const {nombre, descripcion, fechaDeLanzamiento, rating, plataformas, genres} = req.body;
     
     try {
         if(!nombre || !descripcion || !plataformas) { 
             return res.status(400).send("Faltan datos obligatorios")
         };
-        const newGame = await Videogame.create({nombre, descripcion, fechaDeLanzamiento, rating, plataformas, generos});
-        if(generos.length > 0) {
+        const newGame = await Videogame.create({nombre, descripcion, fechaDeLanzamiento, rating, plataformas, genres});
+        if(genres.length > 0) {
             try {
-                generos.map(async(genero)=>{
-                    const gen = await Genero.findByPk(genero)
-                    newGame.setGeneros(gen)
+                genres.map(async(genero)=>{
+                    const gen = await Genero.findByPk(genero.id)
+                    newGame.addGeneros(gen)
                 })
-                return res.send("Creado con éxito")
+                return res.send("Creado con éxito con relacion")
             } catch (error) {
                 return res.send(error.message)
             }
