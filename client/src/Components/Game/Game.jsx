@@ -7,6 +7,7 @@ const Game = ({ nombre, imagen, generos, id }) => {
   
     return (
       <>
+      {console.log(id)}
         <div  className={style.game}>
           <div  className={style.container}>
             <div>
@@ -16,7 +17,7 @@ const Game = ({ nombre, imagen, generos, id }) => {
               </Link>
               {/* <ul className={style.lista}>
                   {
-                    generos.map((genero)=> {return(<li key={genero.id}>{genero.nombre}</li>)})
+                    generos.map((genero, index)=> {return(<li key={index}>{genero}</li>)})
                   }
                 </ul> */}
             </div>

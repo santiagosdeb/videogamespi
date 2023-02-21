@@ -12,7 +12,6 @@ const Form = () => {
     const [form, setForm] = useState({
         nombre: "",
         descripcion: "",
-        imagen: './noImage.jpg',
         fechaDeLanzamiento: "",
         rating: "",
         genres: [],
@@ -138,7 +137,3 @@ const Form = () => {
 
 
 export default Form;
-
-
-
-// tengo un componente home en el cual se renderizan videojuegos, como puedo hacer un select para hacer un ordenamiento ascendente o descendente por una propiedad "rating" y/o por orden alfabetico, utilizando redux, react y react-redux y js
