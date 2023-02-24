@@ -50,12 +50,6 @@ const Home = () => {
 if(currentGames.length){
    return(
             <>
-            <Paginado 
-                gamesPerPage={gamesPerPage} 
-                videogames={videogames.length}
-                paginado={paginado} 
-                currentPage={currentPage} 
-            />
             <Buscador />
             <div>
                 <label htmlFor="genero">Filtrar por género:</label>
@@ -84,6 +78,13 @@ if(currentGames.length){
                 </button>
             </div>
             <GameContainer key={videogames.id} currentGames={filteredVideogames} />
+            <Paginado 
+                gamesPerPage={gamesPerPage} 
+                videogames={videogames.length}
+                paginado={paginado} 
+                currentPage={currentPage} 
+            />
+            
             </>
         )}else{
             return(

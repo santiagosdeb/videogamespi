@@ -2,26 +2,23 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    height: 140px;
-    background-image: url('./fondoNavbar.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: 0px;
   }
 
   .btn{
     width: 260px;
     height: 40px;
-    background: #fefdfa;
-    border: 1px solid #87847f;
     cursor: pointer;
-    border-radius: 2px;
-    color: rgb(0, 0, 0);
-    font-family: "Exo", sans-serif;
     font-size: 16px;
-    font-weight: 400;
-    text-align: center;
-    padding: 6px;
-    margin: 30px;
+    margin-top: 20px;
     border-radius: 5px;
   }
+
+  /* .btn::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    left: -50px;
+    right: -50px;
+    bottom: -50px;
+    pointer-events: none;
+  } */

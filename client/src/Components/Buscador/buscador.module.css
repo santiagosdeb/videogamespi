@@ -11,12 +11,10 @@ display: flex;
     align-items: flex-start;
 }
 
-.formcontainer button {
-  margin-bottom: 10px;
+.btn {
   height: 35px;
   width: 100px;
   cursor: pointer;
-  border-radius: 0px
 }
 
 

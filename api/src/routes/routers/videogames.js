@@ -1,7 +1,7 @@
 require('dotenv').config();
 const { Router } = require('express');
 const axios = require('axios');
-const { Videogame, Genero } = require('../../db');
+const { Videogame, Genre} = require('../../db');
 const { Op } = require('sequelize');
 const { API_KEY } = process.env;
  
@@ -106,18 +106,20 @@ router.get('/:id', async(req,res) => {
 });
 
 router.post('/', async(req,res) => {
-    const {nombre, descripcion, fechaDeLanzamiento, rating, plataformas, genres} = req.body;
+    const {nombre, descripcion, fechaDeLanzamiento, rating, plataformas, generos} = req.body;
     
     try {
         if(!nombre || !descripcion || !plataformas) { 
             return res.status(400).send("Faltan datos obligatorios")
         };
-        const newGame = await Videogame.create({nombre, descripcion, fechaDeLanzamiento, rating, plataformas, genres});
-        if(genres.length > 0) {
+        const newGame = await Videogame.create({nombre, descripcion, fechaDeLanzamiento, rating, plataformas, generos});
+        if(generos.length > 0) {
             try {
-                genres.map(async(genero)=>{
-                    const gen = await Genero.findByPk(genero.id)
-                    newGame.addGeneros(gen)
+                generos.map(async(genero)=>{
+                    const gen = await Genre.findAll({where: {
+                        nombre: genero
+                    }})
+                    await newGame.addGenres(gen)
                 })
                 return res.send("Creado con éxito con relacion")
             } catch (error) {

@@ -1,7 +1,7 @@
 require('dotenv').config();
 const { Router } = require('express');
 const axios = require('axios');
-const { Genero } = require('../../db');
+const { Genre } = require('../../db');
 const { API_KEY } = process.env;
 
 const router = Router();
@@ -15,9 +15,9 @@ router.get('/', async(req,res) => {
             nombre: gen.name
         })
     });
-    const validator = await Genero.findAll();
+    const validator = await Genre.findAll();
     if(!validator.length){
-        const generosDB = await Genero.bulkCreate(generos);
+        const generosDB = await Genre.bulkCreate(generos);
         return res.send(generosDB)
     }
     res.send(validator);

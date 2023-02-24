@@ -28,7 +28,7 @@ const Buscador = () => {
           <div>
             <input type="text" id="game" value={game} onChange={handleChange} autoComplete="off" placeholder="Search videogame" className={style.buscador}/>
           </div>
-        <Link to={`/search/${game}`}><button type="submit">SEARCH</button></Link>
+        <Link to={`/search/${game}`}><button type="submit" className={style.btn}>SEARCH</button></Link>
         </form>
       </div>
     );

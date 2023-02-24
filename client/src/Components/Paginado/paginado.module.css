@@ -10,7 +10,7 @@
     margin: 0 0.5rem;
   }
   
-  button {
+  .btn {
     background: rgba(140, 247, 178, 0.765);
     border: none;
     cursor: pointer;
@@ -21,14 +21,24 @@
     border-radius: 0.5rem;
   }
   
-  button:disabled {
-    color: #686767;
+  .btnSelec {
+    background: rgba(91, 158, 114, 0.785);
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-right: 1rem;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+  }
+
+  .btn:disabled {
+    background-color: rgba(112, 109, 109, 0.583);
     cursor: not-allowed;
   }
   
-  button:active {
-    background-color: rgb(54, 86, 65);
-    color: #000000;
+  .btn:active {
+    background-color: rgba(115, 202, 146, 0.85);
   }
   
   

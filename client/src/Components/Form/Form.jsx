@@ -14,7 +14,7 @@ const Form = () => {
         descripcion: "",
         fechaDeLanzamiento: "",
         rating: "",
-        genres: [],
+        generos: [],
         plataformas: []
         });
 
@@ -35,7 +35,7 @@ const Form = () => {
         if(!form.descripcion.length) errors.descripcion = "Debe ingresar una descripcion"
         if(form.rating > 5) errors.rating = "El rating no puede superar los 5 puntos";
         if(form.rating < 0) errors.rating = "El rating no puede ser menor a 0 puntos";
-        if(!form.genres.length) errors.genres = "Debe seleccionar al menos un genero"
+        if(!form.generos.length) errors.generos = "Debe seleccionar al menos un genero"
         if(!form.plataformas.length) errors.plataformas = "Debe seleccionar al menos una plataforma"
         return errors;
     };
@@ -66,7 +66,7 @@ const Form = () => {
                     descripcion: "",
                     fechaDeLanzamiento: "",
                     rating: "",
-                    genres: [],
+                    generos: [],
                     plataformas: []
                 })
             } catch (error) {
@@ -107,8 +107,8 @@ const Form = () => {
             </div>
 
             <div>
-            <label htmlFor="genres" className={style.label}>Generos</label>
-                <select name="genres" value={form.genres} onChange={changeHandlerArr} multiple>
+            <label htmlFor="generos" className={style.label}>Generos</label>
+                <select name="generos" value={form.generos} onChange={changeHandlerArr} multiple>
                     <option disabled value="default">Presionando ctrl, seleccione uno o más generos</option>
                     {
                     generos?.map(gen=>{return(<option key={gen.id} value={gen.nombre}>{gen.nombre}</option>)})

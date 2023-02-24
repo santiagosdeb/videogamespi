@@ -4,16 +4,15 @@
   left: 0px;
   right: 0px;
   bottom: 0px;
-  width: auto;
+  background-image: url('landing.jpg');
+  background-repeat: no-repeat;
+  background-size: 100% auto; 
   height: auto;
-  background-image: url('fondo.jpg');
-  resize: both;
-  overflow: auto;
-  background-repeat: round;
+  width: auto;
 }
 
 .btn{ 
-  border-radius: 10px;
+  border-radius: 4px;
   background-color: rgba(213, 156, 50, 0.871);
   width: 150px;
   height: 50px;

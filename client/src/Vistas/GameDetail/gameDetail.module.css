@@ -4,17 +4,15 @@
     align-items: center;
   }
   
-.second {
+/* .second {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-image: url('fondod.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-color: rgba(154, 141, 141, 0.445);
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  }
+  } */
 
 .gameImg {
   display:inline-block;

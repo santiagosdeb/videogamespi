@@ -12,22 +12,22 @@ const Paginado = ({gamesPerPage, videogames, paginado, currentPage}) => {
     return (
         <nav>
         <ul className={style.paginado}>
-            <button onClick={() => {paginado(currentPage - 1)}} disabled={currentPage === 1}>
+            <button onClick={() => {paginado(currentPage - 1)}} className={style.btn} disabled={currentPage === 1}>
                 Atrás
             </button>
             {pageNumbers &&
             pageNumbers.map(number => {
                 return number !== currentPage ? (
                 <li key={number}>
-                    <button onClick={() => {paginado(number)}}>{number}</button>
+                    <button onClick={() => {paginado(number)}} className={style.btn}>{number}</button>
                 </li>  
                 ) : (
                 <li key={number}>     
-                    <button onClick={() => {paginado(number)}}>{number}</button>
+                    <button onClick={() => {paginado(number)} } className={style.btnSelec}>{number}</button>
                 </li>
                 );
             })}
-            <button onClick={() => {paginado(currentPage + 1)}} disabled={currentPage === pageNumbers.length}>
+            <button onClick={() => {paginado(currentPage + 1)}} className={style.btn} disabled={currentPage === pageNumbers.length}>
                 Adelante
             </button>
         </ul>
