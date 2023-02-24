@@ -2,8 +2,8 @@
     display: flex;
     justify-content: center;
     list-style: none;
-    margin: 0;
-    padding: 0;
+    margin-bottom: 50px;
+    margin-top: 30px;
   }
   
   li {
@@ -12,33 +12,48 @@
   
   .btn {
     background: rgba(140, 247, 178, 0.765);
-    border: none;
     cursor: pointer;
-    font-size: 1rem;
-    margin-right: 1rem;
-    font-size: 1rem;
-    padding: 0.5rem 1rem;
-    border-radius: 0.5rem;
+    font-size: 16px; 
+    margin-right: 16px; 
+    padding: 8px 16px;
+    border-radius: 8px;
   }
   
   .btnSelec {
     background: rgba(91, 158, 114, 0.785);
-    border: none;
     cursor: pointer;
-    font-size: 1rem;
-    margin-right: 1rem;
-    font-size: 1rem;
-    padding: 0.5rem 1rem;
-    border-radius: 0.5rem;
+    font-size: 16px; 
+    margin-right: 16px; 
+    padding: 8px 16px;
+    border-radius: 8px;
   }
 
   .btn:disabled {
-    background-color: rgba(112, 109, 109, 0.583);
-    cursor: not-allowed;
+    display: none;
   }
   
-  .btn:active {
+  .btn:hover {
     background-color: rgba(115, 202, 146, 0.85);
+    transform: scale(1.1)
+  }
+
+  .flechaIzq {
+    background: rgba(140, 247, 178, 0.765);
+    cursor: pointer;
+    font-size: 16px; 
+    margin-right: 16px; 
+    padding: 8px 16px;
+    border-radius: 8px;
+    transform: scaleX(-1);
+  }
+
+  .flechaIzq:disabled {
+    display: none;
+  }
+  
+  .flechaIzq:hover {
+    background-color: rgba(115, 202, 146, 0.85);
+    transform: scale(1.1)
   }
   
   

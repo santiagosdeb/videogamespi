@@ -24,18 +24,21 @@ const VistaBuscador = () => {
             <div>
             <Buscador/>
             </div>
-            <ul className={style.container}>
+            <ul className={style.todosLosJuegos}>
                 {searchedGames.map((game) => {
                 return(
-                
+
               <div className={style.game}>
                 <div className={style.containerb}>
-                  <li key={game.id}>
                     <Link to={`/game/${game.id}`}>
                       <img src={game.imagen} alt={''} className={style.imgBuscados}/>
-                      <h3>{game.nombre}</h3>
+                      <h3 className={style.nombres}>{game.nombre}</h3>
                     </Link>
-                  </li>
+                  <ul className={style.lista}>
+                  {
+                    game.generos.map((genero, index) => {return(<li key={index}>{genero}</li>)})
+                  }
+                </ul>
                 </div>
               </div>
             )

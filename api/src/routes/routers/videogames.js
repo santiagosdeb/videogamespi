@@ -64,7 +64,7 @@ router.get('/', async(req,res) => {
                 plataformas: game.platforms.map(platform => { return platform.platform.name })
             })
         });
-        const response = [...apiGames,...gameDatabase];
+        const response = [...gameDatabase, ...apiGames];
         if(!response.length) {
             return res.status(404).send("No se encontraron videojuegos con ese nombre")
         }

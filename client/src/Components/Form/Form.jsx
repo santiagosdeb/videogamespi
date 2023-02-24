@@ -108,7 +108,7 @@ const Form = () => {
 
             <div>
             <label htmlFor="generos" className={style.label}>Generos</label>
-                <select name="generos" value={form.generos} onChange={changeHandlerArr} multiple>
+                <select name="generos" value={form.generos} onChange={changeHandlerArr} className={style.select} multiple>
                     <option disabled value="default">Presionando ctrl, seleccione uno o más generos</option>
                     {
                     generos?.map(gen=>{return(<option key={gen.id} value={gen.nombre}>{gen.nombre}</option>)})
@@ -119,7 +119,7 @@ const Form = () => {
 
             <div>
             <label htmlFor="plataformas" className={style.label} required>Plataformas</label>
-                <select name="plataformas" value={form.plataformas} onChange={changeHandlerArr} multiple>
+                <select name="plataformas" value={form.plataformas} onChange={changeHandlerArr} className={style.select} multiple>
                     <option disabled value="default">Presionando ctrl, seleccione una o más plataformas</option>
                     {
                     plataformas?.map((plat,index)=>{return(<option key={index} value={plat}>{plat}</option>)})
@@ -128,7 +128,7 @@ const Form = () => {
                 <p>{errors.plataformas && errors.plataformas}</p>
             </div>
 
-            <button type="submit" disabled={Object.keys(errors).length}>POST</button>
+            <button type="submit" className={style.btn} disabled={Object.keys(errors).length}>POST</button>
         </form>
         </div>
         </div> 

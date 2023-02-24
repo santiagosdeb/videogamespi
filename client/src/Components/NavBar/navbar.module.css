@@ -5,20 +5,13 @@
   }
 
   .btn{
+    background-color: rgba(140, 247, 178, 0.765);
+    border: 0.5px solid black;
     width: 260px;
     height: 40px;
     cursor: pointer;
     font-size: 16px;
     margin-top: 20px;
+    margin-bottom: 20px;
     border-radius: 5px;
   }
-
-  /* .btn::before {
-    content: '';
-    position: absolute;
-    top: -50px;
-    left: -50px;
-    right: -50px;
-    bottom: -50px;
-    pointer-events: none;
-  } */

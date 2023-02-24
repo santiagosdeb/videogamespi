@@ -7,13 +7,11 @@
   background-image: url('landing.jpg');
   background-repeat: no-repeat;
   background-size: 100% auto; 
-  height: auto;
-  width: auto;
 }
 
 .btn{ 
   border-radius: 4px;
-  background-color: rgba(213, 156, 50, 0.871);
+  background-color: rgb(140, 247, 178);
   width: 150px;
   height: 50px;
   color: black;

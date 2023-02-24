@@ -8,9 +8,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-image: url('fondof.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
@@ -37,7 +34,7 @@
   font-size: 16px;
 }
 
-select {
+.select {
   width: 100%;
   padding: 10px;
   border-radius: 5px;
@@ -47,10 +44,10 @@ select {
 }
 
 
-select[multiple] {
-  height: 120px;
+.select[multiple] {
+  height: 150px;
 }
 
-button:disabled{
+.btn:disabled{
   background-color: lightgray;
 }
