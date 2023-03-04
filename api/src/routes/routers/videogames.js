@@ -106,13 +106,13 @@ router.get('/:id', async(req,res) => {
 });
 
 router.post('/', async(req,res) => {
-    const {nombre, descripcion, fechaDeLanzamiento, rating, plataformas, generos} = req.body;
+    const {nombre, descripcion, fechaDeLanzamiento, rating, plataformas, generos, imagen} = req.body;
     
     try {
         if(!nombre || !descripcion || !plataformas) { 
             return res.status(400).send("Faltan datos obligatorios")
         };
-        const newGame = await Videogame.create({nombre, descripcion, fechaDeLanzamiento, rating, plataformas, generos});
+        const newGame = await Videogame.create({nombre, descripcion, fechaDeLanzamiento, rating, plataformas, generos, imagen});
         if(generos.length > 0) {
             try {
                 generos.map(async(genero)=>{

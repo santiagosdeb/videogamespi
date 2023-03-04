@@ -36,12 +36,7 @@ module.exports = (sequelize) => {
     },
     imagen: {
       type: DataTypes.TEXT,
-      defaultValue: function () {
-        const imagePath = path.join(__dirname, 'defaultImg.jpg');
-        const imageBuffer = fs.readFileSync(imagePath);
-        const encodedImage = imageBuffer.toString('base64');
-        return `data:image/jpeg;base64,${encodedImage}`;
-      },
+      allowNull: false,
     },
   },
   {

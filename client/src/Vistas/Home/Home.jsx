@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { cleanAllVideogames, getVideogames, orderVideogames, getGeneros } from '../../redux/actions';
+import { cleanAllVideogames, getVideogames, getGeneros } from '../../redux/actions';
 import GameContainer from '../../Components/GameContainer/GameContainer'
 import Buscador from '../../Components/Buscador/Buscador';
 import Paginado from '../../Components/Paginado/Paginado';
@@ -29,14 +29,6 @@ const Home = () => {
       ? currentGames.filter((videogame) => videogame.generos.includes(generoSelec))
       : currentGames;
 
-
-    const [currentOrder, setCurrentOrder] = useState("");
-
-    const handleOrder = (event) => {
-        setCurrentOrder(event.target.value);
-        dispatch(orderVideogames(event.target.value))
-    }
-
     useEffect(()=>{
         dispatch(getVideogames())
         dispatch(getGeneros())
@@ -52,7 +44,7 @@ if(currentGames.length){
             <>
             <Buscador />
             <div>
-                <label htmlFor="genero">Filtrar por género:</label>
+                <label htmlFor="genero">Filtrar por género</label>
                     <select id="genero" value={generoSelec} onChange={handleGenreChange}>
                         <option value="">-- Todos los géneros --</option>
                         {generos.map(genero => {
@@ -63,19 +55,6 @@ if(currentGames.length){
         );
       })}
                     </select>
-
-                <button value="ratingAsc" onClick={handleOrder}>
-                    Ordenar por rating (from 0 to 5)
-                </button>
-                <button value="ratingDesc" onClick={handleOrder}>
-                    Ordenar por rating (from 5 to 0)
-                </button>
-                <button value="nombreAsc" onClick={handleOrder}>
-                    Ordenar por nombre (A-Z)
-                </button>
-                <button value="nombreDesc" onClick={handleOrder}>
-                    Ordenar por nombre (Z-A)
-                </button>
             </div>
             <GameContainer key={videogames.id} currentGames={filteredVideogames} />
             <Paginado 

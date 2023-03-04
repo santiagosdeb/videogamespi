@@ -27,7 +27,7 @@ const Paginado = ({gamesPerPage, videogames, paginado, currentPage}) => {
                 </li>
                 );
             })}
-            <button onClick={() => {paginado(currentPage + 1)}} className={style.btn} disabled={currentPage === pageNumbers.length}>
+            <button onClick={() => {paginado(currentPage + 1)}} className={style.flechaDer} disabled={currentPage === pageNumbers.length}>
                 &#10148;
             </button>
         </ul>

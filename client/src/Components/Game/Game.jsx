@@ -3,23 +3,22 @@ import style from './game.module.css'
 import { Link } from 'react-router-dom';
 
 
-const Game = ({ nombre, imagen, generos, id }) => {
+const Game = ({ nombre, imagen, generos, id, rating }) => {
   
     return (
       <>
         <div  className={style.game}>
-          <div  className={style.container}>
             <div>
-              <Link to={`/game/${id}`}>
+              <Link to={`/game/${id}`} className={style.link}>
                 <img src={imagen} alt="Fotos" className={style.gameImg} />
                 <h2 className={style.nombres}> {nombre} </h2>
-              </Link>
+                <h4 className={style.rating}>Rating: {rating}</h4>
               <ul className={style.lista}>
                   {
                     generos.map((genero, index)=> {return(<li key={index}>{genero}</li>)})
                   }
                 </ul>
-            </div>
+              </Link>
           </div>
         </div>
       </>

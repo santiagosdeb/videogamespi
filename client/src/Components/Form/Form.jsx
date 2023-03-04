@@ -11,6 +11,7 @@ const Form = () => {
 
     const [form, setForm] = useState({
         nombre: "",
+        imagen: "",
         descripcion: "",
         fechaDeLanzamiento: "",
         rating: "",
@@ -63,6 +64,7 @@ const Form = () => {
                 alert(post.data)
                 setForm({
                     nombre: "",
+                    imagen: "",
                     descripcion: "",
                     fechaDeLanzamiento: "",
                     rating: "",
@@ -86,6 +88,11 @@ const Form = () => {
                 <label htmlFor="nombre" className={style.label} required>Nombre</label>
                 <input type="text" onChange={changeHandler} name="nombre" value={form.nombre} className={style.input}/>
                 <p>{errors.nombre && errors.nombre}</p>
+            </div>
+
+            <div>
+                <label htmlFor='imagen' className={style.label}>Imagen</label>
+                <input type='text' onChange={changeHandler} name="imagen" value={form.imagen} className={style.input}/>
             </div>
 
             <div>

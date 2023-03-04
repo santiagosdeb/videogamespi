@@ -3,38 +3,36 @@
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     grid-gap: 20px;
     align-items: stretch;
-    margin: 10px;
-  }
-
-  .container {
-    border: 0.2px solid  black;
-    box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.3);
+    margin: 4px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.98);
     color: black;
     width: 270px;
-    height: 420px;
+    height: 440px;
     background-color: rgba(140, 247, 178, 0.765);
     transition: transform 0.2s ease-in-out;
+    overflow: auto;
   }
   
-  .container:hover{
-    transform: scale(1.1)
+  .game:hover{
+    transform: scale(1.02)
   }
 
   .gameImg {
     height: 250px;
     width: 100%;
     object-fit: cover;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
   }
 
   .nombres {
+    color: #000000;
+    /* padding: 0 20px 20px; */
+  }
+
+  .rating{
     color: black;
-    padding: 0 20px 20px;
-  }.game {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    grid-gap: 20px;
-    align-items: stretch;
-    margin: 10px;
   }
  
   .lista {
@@ -42,11 +40,17 @@
     list-style: none;
     padding: 0;
     margin: 0;
+    color: black;
   }
   
   .lista li {
     flex: 1;
     text-align: center;
-    font-size: medium;
+    font-size: 16px;
     font-weight: bold;
+    text-decoration: none;
+  }
+
+  .link {
+    text-decoration: none;
   }
